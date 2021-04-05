@@ -1,4 +1,3 @@
-##FIAP - Trabalho - 23CLD
 ## AWS SAM Application for Managing Study Data Lake
 
 This is a sample application to demonstrate how to build an application on AWS Serverless Envinronment using the
