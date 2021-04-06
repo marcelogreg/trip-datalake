@@ -69,7 +69,7 @@ Resources:
             - method.request.querystring.country
             - method.request.querystring.city
   TripTable:
-    Type: AWS::DynamoDB::Table
+    Type: AWS::DynamoDB::Table 
     Properties:
       TableName: trip
       AttributeDefinitions:
@@ -77,21 +77,19 @@ Resources:
         AttributeType: S
       - AttributeName: city
         AttributeType: S
-      - AttributeName: date
-        AttributeType: S
       - AttributeName: reason
-        AttributeType: S
+        AttributeType: S          
       KeySchema:
       - AttributeName: country
         KeyType: HASH
       - AttributeName: city
         KeyType: RANGE
       LocalSecondaryIndexes:
-      - IndexName: cityIndex
+      - IndexName: reasonIndex
         KeySchema:
         - AttributeName: country
           KeyType: HASH
-        - AttributeName: city
+        - AttributeName: reason
           KeyType: RANGE
         Projection:
           ProjectionType: ALL

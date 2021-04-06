@@ -6,7 +6,7 @@ import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 import br.com.iwe.dao.TripRepository;
-import br.com.iwe.model.HandlerRequest;
+import br.com.iwe.model.HandlerRequest; 
 import br.com.iwe.model.HandlerResponse;
 import br.com.iwe.model.Trip;
 

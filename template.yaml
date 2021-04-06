@@ -20,7 +20,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
      CodeUri: target/study-datalake-1.0.0-SNAPSHOT-jar-with-dependencies.jar
-     Handler: br.com.iwe.handler.CreateStudyRecord::handleRequest
+     Handler: br.com.iwe.handler.CreateTripRecord::handleRequest
      Runtime: java8
      Policies:
        - DynamoDBCrudPolicy:
@@ -36,7 +36,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
      CodeUri: target/study-datalake-1.0.0-SNAPSHOT-jar-with-dependencies.jar
-     Handler: br.com.iwe.handler.GetStudyRecordsByPeriod::handleRequest
+     Handler: br.com.iwe.handler.GetTripSByCountry::handleRequest
      Runtime: java8
      Policies:
        - DynamoDBCrudPolicy:
@@ -53,7 +53,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
      CodeUri: target/study-datalake-1.0.0-SNAPSHOT-jar-with-dependencies.jar
-     Handler: br.com.iwe.handler.GetStudyRecordsByTag::handleRequest
+     Handler: br.com.iwe.handler. GetTripSByCity::handleRequest
      Runtime: java8
      Policies:
        - DynamoDBCrudPolicy:
@@ -71,26 +71,24 @@ Resources:
     Type: AWS::DynamoDB::Table
     Properties:
       TableName: trip
-      AttributeDefinitions:
+      AttributeDefinitions: 
         - AttributeName: country
           AttributeType: S
         - AttributeName: city
           AttributeType: S
-        - AttributeName: date
-          AttributeType: S
         - AttributeName: reason
-          AttributeType: S            
+          AttributeType: S          
       KeySchema:
         - AttributeName: country
           KeyType: HASH
         - AttributeName: city
           KeyType: RANGE
       LocalSecondaryIndexes: 
-        - IndexName: cityIndex
+        - IndexName: reasonIndex
           KeySchema: 
             - AttributeName: country
               KeyType: HASH
-            - AttributeName: city
+            - AttributeName: reason
               KeyType: RANGE
           Projection:
              ProjectionType: ALL 

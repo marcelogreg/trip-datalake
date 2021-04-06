@@ -7,17 +7,21 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
 @DynamoDBTable(tableName = "trip")
-public class Trip {
+public class Trip { 
 
 	@DynamoDBHashKey(attributeName = "country")
 	private String country;
 
-	@DynamoDBIndexRangeKey(attributeName = "city", localSecondaryIndexName = "cityIndex")
+	@DynamoDBRangeKey(attributeName = "city")
 	private String city;
+
+	@DynamoDBIndexRangeKey(attributeName = "reason", localSecondaryIndexName = "reasonIndex")
+	private String reason;
+
 	@DynamoDBAttribute(attributeName = "date")
 	private String date;
-	@DynamoDBAttribute(attributeName = "reason")
-	private String reason;
+//	@DynamoDBAttribute(attributeName = "reason")
+//	private String reason;
 
 
 	public Trip(String country, String city, String date, String reason) {
