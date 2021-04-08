@@ -26,8 +26,7 @@ public class TripRepository {
 		eav.put(":val1", new AttributeValue().withS(country));
 		eav.put(":val2", new AttributeValue().withS(city));
 
-		final DynamoDBQueryExpression<Trip> queryExpression = new DynamoDBQueryExpression<Trip>()
-				.withIndexName("cityIndex").withConsistentRead(false)
+		final DynamoDBQueryExpression<Trip> queryExpression = new DynamoDBQueryExpression<Trip>()			
 				.withKeyConditionExpression("country = :val1 and city=:val2").withExpressionAttributeValues(eav);
 
 		final List<Trip> trips = mapper.query(Trip.class, queryExpression);

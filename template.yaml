@@ -53,7 +53,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
      CodeUri: target/study-datalake-1.0.0-SNAPSHOT-jar-with-dependencies.jar
-     Handler: br.com.iwe.handler. GetTripSByCity::handleRequest
+     Handler: br.com.iwe.handler.GetTripSByCity::handleRequest
      Runtime: java8
      Policies:
        - DynamoDBCrudPolicy:
@@ -77,7 +77,7 @@ Resources:
         - AttributeName: city
           AttributeType: S
         - AttributeName: reason
-          AttributeType: S          
+          AttributeType: S
       KeySchema:
         - AttributeName: country
           KeyType: HASH

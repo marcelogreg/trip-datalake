@@ -18,7 +18,7 @@ Resources:
   CreateTripRecordFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://aws-sam-fiap-gregorio/3ed81b0f13ea5084bda6c22f9504907c
+      CodeUri: s3://aws-sam-fiap-gregorio/b767ef1da5c8139225fcee5719ef304c
       Handler: br.com.iwe.handler.CreateTripRecord::handleRequest
       Runtime: java8
       Policies:
@@ -34,7 +34,7 @@ Resources:
   GetTripSByCountryFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://aws-sam-fiap-gregorio/3ed81b0f13ea5084bda6c22f9504907c
+      CodeUri: s3://aws-sam-fiap-gregorio/b767ef1da5c8139225fcee5719ef304c
       Handler: br.com.iwe.handler.GetTripSByCountry::handleRequest
       Runtime: java8
       Policies:
@@ -52,7 +52,7 @@ Resources:
   GetTripSByCityFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: s3://aws-sam-fiap-gregorio/3ed81b0f13ea5084bda6c22f9504907c
+      CodeUri: s3://aws-sam-fiap-gregorio/b767ef1da5c8139225fcee5719ef304c
       Handler: br.com.iwe.handler.GetTripSByCity::handleRequest
       Runtime: java8
       Policies:
@@ -69,7 +69,7 @@ Resources:
             - method.request.querystring.country
             - method.request.querystring.city
   TripTable:
-    Type: AWS::DynamoDB::Table 
+    Type: AWS::DynamoDB::Table
     Properties:
       TableName: trip
       AttributeDefinitions:
@@ -78,7 +78,7 @@ Resources:
       - AttributeName: city
         AttributeType: S
       - AttributeName: reason
-        AttributeType: S          
+        AttributeType: S
       KeySchema:
       - AttributeName: country
         KeyType: HASH

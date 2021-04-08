@@ -20,8 +20,6 @@ public class Trip {
 
 	@DynamoDBAttribute(attributeName = "date")
 	private String date;
-//	@DynamoDBAttribute(attributeName = "reason")
-//	private String reason;
 
 
 	public Trip(String country, String city, String date, String reason) {
