@@ -1,17 +1,13 @@
 {
-	"CreateStudyRecordFunction": {
+	"CreateTripRecordFunction": {
 		"ENDPOINT_OVERRIDE": "http://127.0.0.1:8000",
 		"TABLE_NAME": "trip"
 	},
-	"GetStudyRecordsByPeriodFunction": {
+	"GetTripSByCityFunction": {
 		"ENDPOINT_OVERRIDE": "http://127.0.0.1:8000",
 		"TABLE_NAME": "trip"
 	},
-	"GetStudyRecordsByTagFunction": {
-		"ENDPOINT_OVERRIDE": "http://127.0.0.1:8000",
-		"TABLE_NAME": "trip"
-	},
-	"GetStudyRecordsByIsConsumedFunction": {
+	"GetTripSByCountryFunction": {
 		"ENDPOINT_OVERRIDE": "http://127.0.0.1:8000",
 		"TABLE_NAME": "trip"
 	}
