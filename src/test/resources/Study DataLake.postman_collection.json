@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "findByPeriod",
+			"name": "findByCountry",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -37,7 +37,7 @@
 			"response": []
 		},
 		{
-			"name": "createStudyRecord",
+			"name": "createTripRecord",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -67,7 +67,7 @@
 			"response": []
 		},
 		{
-			"name": "findByTag",
+			"name": "findByCity",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -87,33 +87,6 @@
 						{
 							"key": "tag",
 							"value": "codePipeline"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "findByIsConsumed",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/study/devops/findByIsConsumed?isconsumed=false",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"study",
-						"devops",
-						"findByIsConsumed"
-					],
-					"query": [
-						{
-							"key": "isconsumed",
-							"value": "false"
 						}
 					]
 				}
